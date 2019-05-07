@@ -71,7 +71,12 @@ $(function() {
                   <a href="" class="link google" target="_parent"><span class="fa fa-tumblr"></span></a>
                </div>-->
             <!-- script for menu -->
-            <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p></div></div></span>
+            <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
+
+	@foreach($uname as $datas)
+{{ $datas->name }} @endforeach
+
+            </div></div></span>
             <div class="top-menu">
                 <ul>
                 
@@ -133,7 +138,9 @@ $(function() {
 
             
             <li class="current_page"><a href="{{url('/admin_home')}}">Home</a></li>
-            <li><a href="{{url('/personal_admin')}}">name of user</a></li>
+            <li><a href="{{url('/personal_admin')}}">	@foreach($uname as $datas)
+{{ $datas->name }} @endforeach
+'S HOME</a></li>
             <li><a href="{{url('notification')}}">NOTIFICATION</a></li>
           
             <li class="dropdown">
@@ -178,3 +185,148 @@ $(function() {
 </div>-->
 
 
+
+<div class="about_top">
+ <div class="container">
+	<div class="col-md-3 forum">
+     <!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+	        <div class="fb-like-button social-item">
+	  			<a href="{{url('admin_view_members')}}"> <div class="social-item-inner"> 
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+	  				<span class="like-count">View</span> 
+	  				<span class="like-text"> Members </span> 
+	  			</div></a> 
+	  		</div>
+
+	  		<!--<div class="fb-like-button social-item">
+	  			<a href="#" title="" target="_blank"> <div class="social-item-inner"> 
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+	  				<span class="like-count">Upgrade to </span> 
+	  				<span class="like-text"> Members </span> 
+	  			</div></a> 
+	  		</div>-->
+
+	  	<!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+	  	<!-------------------------------Volunteers approval and viewving--->
+
+	  		<div class="twitter-like-button  social-item ">
+	  			 <a href="admin_view_volunteer" > <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">View</span> 
+	  				<span class="like-text">Volunteer </span> 
+	  			</div> </a> 
+	  	    </div>
+
+	  	    <div class="twitter-like-button  social-item ">
+	  			 <a href="admin_approve_volunteer"> <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">Approve</span> 
+	  				<span class="like-text">Volunteer </span> 
+	  			</div> </a> 
+	  	    </div>
+	  	    <!---------------- volunteers approving and viewwing--------------------------->
+
+
+	  	    <!-------- section of work----------------->
+	  	    <div class="youtube-subscribers-button  social-item ">
+				 <a href="admin_view_work" ><div class="social-item-inner">
+					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">View</span> 
+					 <span class="like-text"> Work </span>
+			   </div> </a> 
+	  		</div>
+
+	  		<div class="youtube-subscribers-button  social-item ">
+				 <a href="admin_add_work"><div class="social-item-inner">
+					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">Add New</span> 
+					 <span class="like-text"> Work</span>
+			   </div> </a> 
+	  		</div>
+
+	  		<!---------------------------- section works ends-------------------------------->
+
+	  <!-------- create group------------------->
+	  		<div class="linkedin-button social-item ">
+			 	 <a href="admin_create_group"> <div class="social-item-inner">
+			 		<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+			 		<span class="like-count">Create Groups</span> <span class="like-text"> Follower </span>
+			 	</div> </a> 
+	  		</div>
+
+	  <!------------------ create group section ends--------------------->
+	  <!------------------EMERGENCY MESSAGE------------------------------->
+	  		<div class="dribble-button social-item ">
+	 			 <a href="admin_emergency_message" title="" target="_blank"> <div class="social-item-inner">
+	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
+	 				<span class="like-text">EMERGENCY MESSAGE </span>
+	 			</div> </a> 
+	  		</div>
+	  	<!------------------------- EMERGENCY MESSAGE---------------------->
+	  			<div class="gplus-like-button  social-item">
+	 			 <a href="admin_dialogue_session"> <div class="social-item-inner">
+	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
+	 				<span class="like-text"> Session </span> 
+	 			</div> </a>
+	  	    </div>
+
+	  	       <div class="twitter-like-button  social-item ">
+	  			 <a href="admin_video_conferencing"> <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">Video</span> 
+	  				<span class="like-text">Conferencing </span> 
+	  			</div> </a> 
+	  	    </div>
+	</div>
+	<div class="col-md-9 column-15">
+			
+		
+	  <h3>DIALOGUE SESSION</h3>
+	   <p class="m_4">"Add new dialoge session"</p>
+		   <form class="contact" action="/create" method="post">
+			  <input type="text" class="text" name="c_name" value="Topic" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Topic';}">
+			  <input type="text" class="text" value="Starting Time" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Starting Time';}">
+			  <input type="text" class="text" value="date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Date';}">
+			   <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+			  <textarea value="Description" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Description</textarea>
+	          <div class="submit-wrap">
+	          	<input type="submit" value="SUBMIT">
+	          	<input type="reset" value="Clear">
+	          </div>
+		   </form>
+      </div>		
+
+	   	 <div class="clearfix"> </div>
+	   </div>
+
+	  
+	   	 <div class="clearfix"> </div>
+	   </div>
+	</div>		
+    <div class="clearfix"> </div>
+ </div>
+</div>
+@include('footer')
+<!----language selector----->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<link href="css/jquery.uls.css" rel="stylesheet"/>
+<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+<script>
+	$( document ).ready( function() {
+		$( '.uls-trigger' ).uls( {
+			onSelect : function( language ) {
+				var languageName = $.uls.data.getAutonym( language );
+				$( '.uls-trigger' ).text( languageName );
+			},
+			quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+		} );
+	} );
+</script>	
+</body>
+</html>
