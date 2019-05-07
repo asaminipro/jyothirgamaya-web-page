@@ -1,3 +1,4 @@
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -59,7 +60,7 @@ $(function() {
         <div class="container">
 
             <div class="col-sm-3 logo">
-              <h1><a href="{{url('admin_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
+              <h1><a href="{{url('volunteer_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
             </div>
             <div class="col-sm-9 logo_right">
                <div class="social">
@@ -71,21 +72,18 @@ $(function() {
                </div>-->
             <!-- script for menu -->
             <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
-@foreach($uname as $datas)
 
- {{ $datas->name }}
- @endforeach
+
+
+      @foreach($uname as $datas)
+{{ $datas->name }} @endforeach
 
             </div></div></span>
             <div class="top-menu">
-                <ul>
                 
-                </ul>
-            </div><br>
-    
-   
- 
-     
+            </div>
+           
+                          
                     </div>
                   </div>
                 </div>
@@ -137,17 +135,18 @@ $(function() {
            
 
             
-            <li class="current_page"><a href="{{url('/admin_home')}}">Home</a></li>
-            <li><a href="{{url('/personal_admin')}}"> @foreach($uname as $datas)
+            <li class="current_page"><a href="{{url('volunteer_home')}}">Home</a></li>
+            <li><a href="{{url('personal_volunteer')}}">
+      @foreach($uname as $datas)
 {{ $datas->name }} @endforeach
-'S HOME </a></li>
-            <li><a href="{{url('notification')}}">NOTIFICATION</a></li>
+'S HOME</a></li>
+            <li><a href="{{url('notification_volunteer')}}">NOTIFICATION</a></li>
           
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">MESSAGES<span class="caret"></span></a>
               <ul class="dropdown-menu drop_menu" role="menu">
-                <li><a href="{{url('inbox_admin')}}">INBOX</a></li>
-                <li><a href="{{url('outbox_admin')}}">OUTBOX</a></li>
+                <li><a href="{{url('inbox_volunteer')}}">INBOX</a></li>
+                <li><a href="{{url('outbox_member')}}">OUTBOX</a></li>
               <!--  <li><a href="shortcodes.html">Shortcodes</a></li>
                 <li><a href="faq.html">Faq</a></li>
                 <li><a href="career.html">Career</a></li>
@@ -183,6 +182,7 @@ $(function() {
 - Andre Gide 
   </marquee>     
 </div>-->
+
 <!--<div class="about_banner">
 	<!--<div class="container">
 		<h2>Forum</h2>
@@ -192,9 +192,9 @@ $(function() {
 <div class="about_top">
  <div class="container">
 	<div class="col-md-3 forum">
-<!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+      <!--------------------------- viewving members-------------------->
 	        <div class="fb-like-button social-item">
-	  			<a href="{{url('admin_view_members')}}"> <div class="social-item-inner"> 
+	  			<a href="{{url('volunteer_view_members')}}"> <div class="social-item-inner"> 
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 	  				<span class="like-count">View</span> 
 	  				<span class="like-text"> Members </span> 
@@ -209,74 +209,67 @@ $(function() {
 	  			</div></a> 
 	  		</div>-->
 
-	  	<!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+	  	<!--------------------------- MEMBERS viewing LINK/upgrading link-------------------->
 	  	<!-------------------------------Volunteers approval and viewving--->
 
 	  		<div class="twitter-like-button  social-item ">
-	  			 <a href="admin_view_volunteer" > <div class="social-item-inner">
+	  			 <a href="volunteer_view_volunteer" > <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">View</span> 
 	  				<span class="like-text">Volunteer </span> 
 	  			</div> </a> 
 	  	    </div>
 
-	  	    <div class="twitter-like-button  social-item ">
+	  	  <!--  <div class="twitter-like-button  social-item ">
 	  			 <a href="admin_approve_volunteer"> <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">Approve</span> 
 	  				<span class="like-text">Volunteer </span> 
 	  			</div> </a> 
-	  	    </div>
+	  	    </div>-->
 	  	    <!---------------- volunteers approving and viewwing--------------------------->
 
 
 	  	    <!-------- section of work----------------->
 	  	    <div class="youtube-subscribers-button  social-item ">
-				 <a href="admin_view_work" ><div class="social-item-inner">
+				 <a href="volunteer_view_work" ><div class="social-item-inner">
 					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">View</span> 
 					 <span class="like-text"> Work </span>
 			   </div> </a> 
 	  		</div>
 
-	  		<div class="youtube-subscribers-button  social-item ">
+	  		<!--<div class="youtube-subscribers-button  social-item ">
 				 <a href="admin_add_work"><div class="social-item-inner">
 					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">Add New</span> 
 					 <span class="like-text"> Work</span>
 			   </div> </a> 
-	  		</div>
+	  		</div>-->
 
 	  		<!---------------------------- section works ends-------------------------------->
 
 	  <!-------- create group------------------->
 	  		<div class="linkedin-button social-item ">
-			 	 <a href="admin_create_group"> <div class="social-item-inner">
+			 	 <a href="volunteer_view_group"> <div class="social-item-inner">
 			 		<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-			 		<span class="like-count">Create Groups</span> <span class="like-text"> Follower </span>
+			 		<span class="like-count">View Groups</span> <span class="like-text"> Follower </span>
 			 	</div> </a> 
 	  		</div>
 
 	  <!------------------ create group section ends--------------------->
 	  <!------------------EMERGENCY MESSAGE------------------------------->
 	  		<div class="dribble-button social-item ">
-	 			 <a href="admin_emergency_message" title="" target="_blank"> <div class="social-item-inner">
+	 			 <a href="volunteer_emergency_message" title="" target="_blank"> <div class="social-item-inner">
 	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
 	 				<span class="like-text">EMERGENCY MESSAGE </span>
 	 			</div> </a> 
 	  		</div>
-	  	<div class="gplus-like-button  social-item">
-	 			 <a href="admin_dialogue_session"> <div class="social-item-inner">
-	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
-	 				<span class="like-text"> Session </span> 
+	  	<!------------------------- EMERGENCY MESSAGE---------------------->
+	  		<!-------<div class="gplus-like-button  social-item">
+	 			 <a href="#" title="" target="_blank"> <div class="social-item-inner">
+	 				<span class="fa fa-google-plus sc-icon"></span> <span class="like-count">120</span> 
+	 				<span class="like-text"> Followers </span> 
 	 			</div> </a>
-	  	    </div>
-
-	  	       <div class="twitter-like-button  social-item ">
-	  			 <a href="admin_video_conferencing"> <div class="social-item-inner">
-	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	  				 <span class="like-count">Video</span> 
-	  				<span class="like-text">Conferencing </span> 
-	  			</div> </a> 
-	  	    </div>
+	  	    </div>-------------->
 	</div>
 	<div class="col-md-9 column-15">
 

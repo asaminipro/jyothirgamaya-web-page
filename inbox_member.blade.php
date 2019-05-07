@@ -1,3 +1,4 @@
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -71,21 +72,15 @@ $(function() {
                </div>-->
             <!-- script for menu -->
             <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
-@foreach($uname as $datas)
 
- {{ $datas->name }}
- @endforeach
-
-            </div></div></span>
+            	@foreach($uname as $datas)
+{{ $datas->name }} @endforeach
+</div></div></span>
             <div class="top-menu">
-                <ul>
                 
-                </ul>
-            </div><br>
-    
-   
- 
-     
+            </div>
+           
+                          
                     </div>
                   </div>
                 </div>
@@ -137,17 +132,17 @@ $(function() {
            
 
             
-            <li class="current_page"><a href="{{url('/admin_home')}}">Home</a></li>
-            <li><a href="{{url('/personal_admin')}}"> @foreach($uname as $datas)
+            <li class="current_page"><a href="{{url('member_home')}}">Home</a></li>
+            <li><a href="{{url('personal_member')}}">	@foreach($uname as $datas)
 {{ $datas->name }} @endforeach
-'S HOME </a></li>
-            <li><a href="{{url('notification')}}">NOTIFICATION</a></li>
+'S HOME</a></li>
+            <li><a href="{{url('notification_member')}}">NOTIFICATION</a></li>
           
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">MESSAGES<span class="caret"></span></a>
               <ul class="dropdown-menu drop_menu" role="menu">
-                <li><a href="{{url('inbox_admin')}}">INBOX</a></li>
-                <li><a href="{{url('outbox_admin')}}">OUTBOX</a></li>
+                <li><a href="{{url('inbox_member')}}">INBOX</a></li>
+                <li><a href="{{url('outbox_member')}}">OUTBOX</a></li>
               <!--  <li><a href="shortcodes.html">Shortcodes</a></li>
                 <li><a href="faq.html">Faq</a></li>
                 <li><a href="career.html">Career</a></li>
@@ -176,13 +171,6 @@ $(function() {
         });
         }
 </script>
-<!--<div class="demo">
-  <marquee behavior="scroll" style="background:#F3DB28; color:#000;" direction="left" onmouseover="this.stop();" onmouseout="this.start();">                
-    Its easier to lead men to combat, stirring up their passion, than to restrain them and direct them toward the patient labors of peace."
-
-- Andre Gide 
-  </marquee>     
-</div>-->
 <!--<div class="about_banner">
 	<!--<div class="container">
 		<h2>Forum</h2>
@@ -192,9 +180,9 @@ $(function() {
 <div class="about_top">
  <div class="container">
 	<div class="col-md-3 forum">
-<!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+      <!--------------------------- viewving members-------------------->
 	        <div class="fb-like-button social-item">
-	  			<a href="{{url('admin_view_members')}}"> <div class="social-item-inner"> 
+	  			<a href="{{url('member_view_members')}}"> <div class="social-item-inner"> 
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 	  				<span class="like-count">View</span> 
 	  				<span class="like-text"> Members </span> 
@@ -209,47 +197,47 @@ $(function() {
 	  			</div></a> 
 	  		</div>-->
 
-	  	<!--------------------------- MEMBERS ADDING LINK/upgrading link-------------------->
+	  	<!--------------------------- MEMBERS viewing LINK/upgrading link-------------------->
 	  	<!-------------------------------Volunteers approval and viewving--->
 
 	  		<div class="twitter-like-button  social-item ">
-	  			 <a href="admin_view_volunteer" > <div class="social-item-inner">
+	  			 <a href="member_view_volunteer" > <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">View</span> 
 	  				<span class="like-text">Volunteer </span> 
 	  			</div> </a> 
 	  	    </div>
 
-	  	    <div class="twitter-like-button  social-item ">
+	  	  <!--  <div class="twitter-like-button  social-item ">
 	  			 <a href="admin_approve_volunteer"> <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">Approve</span> 
 	  				<span class="like-text">Volunteer </span> 
 	  			</div> </a> 
-	  	    </div>
+	  	    </div>-->
 	  	    <!---------------- volunteers approving and viewwing--------------------------->
 
 
 	  	    <!-------- section of work----------------->
 	  	    <div class="youtube-subscribers-button  social-item ">
-				 <a href="admin_view_work" ><div class="social-item-inner">
+				 <a href="member_view_work" ><div class="social-item-inner">
 					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">View</span> 
 					 <span class="like-text"> Work </span>
 			   </div> </a> 
 	  		</div>
 
-	  		<div class="youtube-subscribers-button  social-item ">
+	  		<!--<div class="youtube-subscribers-button  social-item ">
 				 <a href="admin_add_work"><div class="social-item-inner">
 					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">Add New</span> 
 					 <span class="like-text"> Work</span>
 			   </div> </a> 
-	  		</div>
+	  		</div>-->
 
 	  		<!---------------------------- section works ends-------------------------------->
 
 	  <!-------- create group------------------->
 	  		<div class="linkedin-button social-item ">
-			 	 <a href="admin_create_group"> <div class="social-item-inner">
+			 	 <a href="member_view_group"> <div class="social-item-inner">
 			 		<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 			 		<span class="like-count">Create Groups</span> <span class="like-text"> Follower </span>
 			 	</div> </a> 
@@ -258,20 +246,21 @@ $(function() {
 	  <!------------------ create group section ends--------------------->
 	  <!------------------EMERGENCY MESSAGE------------------------------->
 	  		<div class="dribble-button social-item ">
-	 			 <a href="admin_emergency_message" title="" target="_blank"> <div class="social-item-inner">
+	 			 <a href="member_emergency_message"> <div class="social-item-inner">
 	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
 	 				<span class="like-text">EMERGENCY MESSAGE </span>
 	 			</div> </a> 
 	  		</div>
-	  	<div class="gplus-like-button  social-item">
-	 			 <a href="admin_dialogue_session"> <div class="social-item-inner">
+	  	<!------------------------- EMERGENCY MESSAGE---------------------->
+	  			<div class="gplus-like-button  social-item">
+	 			 <a href="member_dialogue_session"> <div class="social-item-inner">
 	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
 	 				<span class="like-text"> Session </span> 
 	 			</div> </a>
 	  	    </div>
 
 	  	       <div class="twitter-like-button  social-item ">
-	  			 <a href="admin_video_conferencing"> <div class="social-item-inner">
+	  			 <a href="member_video_conferencing"> <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">Video</span> 
 	  				<span class="like-text">Conferencing </span> 

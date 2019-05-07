@@ -83,12 +83,15 @@ $(function() {
 	<div class="col-md-9 column-9">
 	  <h3>Feedback</h3>
 	   <p class="m_4">"SEND YOUR FEEDBACK HERE!!!!."</p>
-		   <form class="contact" action="/create" method="post">
-			  <input type="text" class="text" name="c_name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-			  <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-			  <input type="text" class="text" value="location" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Location';}">
-			   <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
-			  <textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+		   <form class="contact" action="{{ url('/create') }}" method="post">
+
+		   		{{ csrf_field() }}
+
+			  <input type="text" class="text" name="c_name" placeholder="Please Enter Your Name"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+			  <input type="text" class="text" placeholder="Please Enter Your Email" name="c_mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+			  <input type="text" class="text" placeholder="Please Enter Your Location" name="c_loc"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Location';}">
+			   <input type="text" class="text" placeholder="Please Enter Your Subject" name="c_sub" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+			  <textarea placeholder="Please Enter Your MESSAGE" onfocus="this.value = '';"  name="c_mes"onblur="if (this.value == '') {this.value = 'Message';}"></textarea>
 	          <div class="submit-wrap">
 	          	<input type="submit" value="Send">
 	          	<input type="reset" value="Clear">
