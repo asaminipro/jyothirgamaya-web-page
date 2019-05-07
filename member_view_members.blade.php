@@ -60,7 +60,7 @@ $(function() {
         <div class="container">
 
             <div class="col-sm-3 logo">
-              <h1><a href="{{url('member_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
+              <h1><a href="{{url('admin_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
             </div>
             <div class="col-sm-9 logo_right">
                <div class="social">
@@ -73,12 +73,11 @@ $(function() {
             <!-- script for menu -->
             <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
 
-
-@foreach($uname as $datas)
+            	@foreach($uname as $datas)
 {{ $datas->name }} @endforeach
-            </div></div></span>
+</div></div></span>
             <div class="top-menu">
-               
+                
             </div>
            
                           
@@ -172,19 +171,12 @@ $(function() {
         });
         }
 </script>
-<!--<div class="demo">
-  <marquee behavior="scroll" style="background:#F3DB28; color:#000;" direction="left" onmouseover="this.stop();" onmouseout="this.start();">                
-    Its easier to lead men to combat, stirring up their passion, than to restrain them and direct them toward the patient labors of peace."
-
-- Andre Gide 
-  </marquee>     
+<!--<div class="about_banner">
+	<!--<div class="container">
+		<h2>Forum</h2>
+		<span class="breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Forum</span></span>
+	</div>
 </div>-->
-
-
-
-
-
-
 <div class="about_top">
  <div class="container">
 	<div class="col-md-3 forum">
@@ -255,7 +247,7 @@ $(function() {
 	  <!------------------ create group section ends--------------------->
 	  <!------------------EMERGENCY MESSAGE------------------------------->
 	  		<div class="dribble-button social-item ">
-	 			 <a href="member_emergency_message"> <div class="social-item-inner">
+	 			 <a href="member_emergency_message" > <div class="social-item-inner">
 	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
 	 				<span class="like-text">EMERGENCY MESSAGE </span>
 	 			</div> </a> 
@@ -273,81 +265,101 @@ $(function() {
 	  				 <span class="like-count">Video</span> 
 	  				<span class="like-text">Conferencing </span> 
 	  			</div> </a> 
-	  	    </div>	</div>
-	
+	  	    </div>
+	</div>
 	<div class="col-md-9 column-15">
 
 
-		<!--------------news feed FORUM---------------------------------->
-		<form class="contact" action="{{ url('membernewsfeed') }}" method="POST">
+		<br><br>
+
+
+<div class="table-users">
+   
+   
+   
+   
+     <table cellspacing="0" border="2">
+   	<tr><td colspan="8" height="50" width="1000" bgcolor="#20B2AA"><center><b>MEMBERS IN THE COMMUNITY</b></center></td></tr>
+      <tr bgcolor="cyan">
+         <th >NAME</th>
+         
+          
+            <th>VIEW PROFILE</th>
+        
+            <th>CHAT</th>
+      </tr>
+@foreach($newuser as $datas)
+
+
+      <tr>
+         <td>{{ $datas->name }}</td>
+        
+         <th><a href="view_profile_member_at_admin">Click Here To view Profile</th>
+
+         <th>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">HAVE A CHAT</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+     <form class="contact" action="{{ url('admin_user_review') }}" method="POST">
       {{ csrf_field() }}
+      YOU CAN START UR CHAT HERE
       <textarea  name="des" id="des"value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
             <div class="submit-wrap">
-              <input type="submit" value="Send">
-              <input type="reset" value="Clear">
+             <center> <input type="submit" value="SUBMIT">
+              <input type="reset" value="Clear"></center>
             </div>
        </form>
-<!----------------------------------news feed forum ends------------------------->
+  </div>
 
+</div>
 
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
 
-<!--------------------------CONTENT DISPLAYING AREA---------------------------------------------->
-<br><br><br>
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-	   <h4>View the Posts here..</h4>
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-   
- 
-     <div class="forum_box1">
-       <span class="head_6">
-        @foreach($dialoguedata as $dialoguedata)
-        POSTED BY:
-         </span>
-         <span class="head_3">
-        
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
 
- 
-            <a href="">{{ $dialoguedata->name }}</a>
-         </span>
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
-       <h3>{{ $dialoguedata->created_at }}</h3>
-       <div class="col-sm-12 forum_box1-left">
-         <center>
-        <a href="classified_detail.html"><img src="images/c9.jpg" class="img-responsive" width="250" alt=""/></a></center>
-        <h4><a href="classified_detail.html"></a>{{ $dialoguedata->description }}</h4>
-       
-   <!--       <h5>80 Topics</h5>
-        <p>0 replies</p> -->
-       </div><br>
-
- 
-
-       <!-- <div class="col-sm-9 forum_box1-right">
-        <p> </p>
-            <div class="post-element clearfix">                         
-              <div class="post__1"> -->
-                <span class="post__1-item post__1-date"><a href="#">Add new Comment</a></span>
-                <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-heart-o"></i></a></span><span>1</span>
-              </span>
-               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-comment-o"></i></a></span><span>12</span>
-              </span>
-               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-eye"></i></a></span><span>10</span>
-                  <br><br>@endforeach
-              </span>
-                
-            </div>                     
-            </div>
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+ </th>
+      
          
-       </div>
-       <div class="clearfix"> </div>
-     </div>
-    
-       <div class="clearfix"> </div>
-     </div>
-  </div>    
+      </tr>
+ @endforeach
+     
+   </table>
+</div>
+</div>
+	   
+	   	 <div class="clearfix"> </div>
+	   </div>
+	</div>		
     <div class="clearfix"> </div>
  </div>
 </div>

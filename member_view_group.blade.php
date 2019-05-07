@@ -60,7 +60,7 @@ $(function() {
         <div class="container">
 
             <div class="col-sm-3 logo">
-              <h1><a href="{{url('member_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
+              <h1><a href="{{url('admin_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
             </div>
             <div class="col-sm-9 logo_right">
                <div class="social">
@@ -73,12 +73,11 @@ $(function() {
             <!-- script for menu -->
             <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
 
-
-@foreach($uname as $datas)
+            	@foreach($uname as $datas)
 {{ $datas->name }} @endforeach
-            </div></div></span>
+</div></div></span>
             <div class="top-menu">
-               
+                
             </div>
            
                           
@@ -172,19 +171,12 @@ $(function() {
         });
         }
 </script>
-<!--<div class="demo">
-  <marquee behavior="scroll" style="background:#F3DB28; color:#000;" direction="left" onmouseover="this.stop();" onmouseout="this.start();">                
-    Its easier to lead men to combat, stirring up their passion, than to restrain them and direct them toward the patient labors of peace."
-
-- Andre Gide 
-  </marquee>     
+<!--<div class="about_banner">
+	<!--<div class="container">
+		<h2>Forum</h2>
+		<span class="breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Forum</span></span>
+	</div>
 </div>-->
-
-
-
-
-
-
 <div class="about_top">
  <div class="container">
 	<div class="col-md-3 forum">
@@ -273,81 +265,118 @@ $(function() {
 	  				 <span class="like-count">Video</span> 
 	  				<span class="like-text">Conferencing </span> 
 	  			</div> </a> 
-	  	    </div>	</div>
-	
+	  	    </div>
+	</div>
 	<div class="col-md-9 column-15">
 
 
-		<!--------------news feed FORUM---------------------------------->
-		<form class="contact" action="{{ url('membernewsfeed') }}" method="POST">
-      {{ csrf_field() }}
-      <textarea  name="des" id="des"value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
-            <div class="submit-wrap">
-              <input type="submit" value="Send">
-              <input type="reset" value="Clear">
-            </div>
-       </form>
-<!----------------------------------news feed forum ends------------------------->
+		
+	 YOU CURRENT NUMBER OF GROUP MEMEBERS : 	
+<br><br>
 
 
-
-<!--------------------------CONTENT DISPLAYING AREA---------------------------------------------->
-<br><br><br>
-
-	   <h4>View the Posts here..</h4>
-
+<div class="table-users">
    
- 
-     <div class="forum_box1">
-       <span class="head_6">
-        @foreach($dialoguedata as $dialoguedata)
-        POSTED BY:
-         </span>
-         <span class="head_3">
+   
+   <table cellspacing="2" border="2" cellpadding="2">
+   	<tr><td colspan="4" height="50" width="1000" bgcolor="#20B2AA"><center><b>GROUP MEMBERS</b></center></td></tr>
+      <tr bgcolor="cyan">
         
+                 
+      </tr>
 
- 
-            <a href="">{{ $dialoguedata->name }}</a>
-         </span>
+      <tr>
+         <td bgcolor="#FAFAD2" > 
 
-       <h3>{{ $dialoguedata->created_at }}</h3>
-       <div class="col-sm-12 forum_box1-left">
-         <center>
-        <a href="classified_detail.html"><img src="images/c9.jpg" class="img-responsive" width="250" alt=""/></a></center>
-        <h4><a href="classified_detail.html"></a>{{ $dialoguedata->description }}</h4>
-       
-   <!--       <h5>80 Topics</h5>
-        <p>0 replies</p> -->
-       </div><br>
+	 <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	
+      		
+  </td>
+          <td bgcolor="#FAFAD2">  
 
- 
+        <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
+</td>
+          <td bgcolor="#FAFAD2">  
 
-       <!-- <div class="col-sm-9 forum_box1-right">
-        <p> </p>
-            <div class="post-element clearfix">                         
-              <div class="post__1"> -->
-                <span class="post__1-item post__1-date"><a href="#">Add new Comment</a></span>
-                <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-heart-o"></i></a></span><span>1</span>
-              </span>
-               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-comment-o"></i></a></span><span>12</span>
-              </span>
-               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-                  <i class="fa fa-eye"></i></a></span><span>10</span>
-                  <br><br>@endforeach
-              </span>
-                
-            </div>                     
-            </div>
+        <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
+</td>
+          <td bgcolor="#FAFAD2">  
+
+        <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
          
-       </div>
-       <div class="clearfix"> </div>
-     </div>
-    
-       <div class="clearfix"> </div>
-     </div>
-  </div>    
+      </tr>
+
+
+          <tr>
+         <td bgcolor="#FAFAD2" > 
+
+	 <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	
+      		
+  </td>
+          <td bgcolor="#FAFAD2">  
+
+        <label>NAME GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
+</td>
+          <td bgcolor="#FAFAD2">  
+
+        <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
+</td>
+          <td bgcolor="#FAFAD2">  
+
+        <label>NAME OD GROUP MEMBER</label><br>
+	 <label>DESCRIPTION</label><br>
+	 <br><br><br>
+	 <label><a href="">See more</a></label>
+	          
+	     
+</td>
+         
+      </tr>
+
+     
+   </table>
+</div>
+</div>
+	   	 <div class="clearfix"> </div>
+	   </div>
+	</div>		
     <div class="clearfix"> </div>
  </div>
 </div>

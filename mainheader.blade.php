@@ -93,8 +93,12 @@ $(function() {
                                 </h4>
                             </div>
                             <div class="modal-body">
-                             <form class="register">
+
+
+{{--------------------------------------------LOGIN FORM -----------------------------------------------}}
+                             <form class="login" method="post" action="{{ url('/createlogins') }}">
                                <div class="section">
+                                 {{ csrf_field() }}
                                 <label for="username" class="field prepend-icon">
                                     <input type="text" name="username" id="username" placeholder="Username">
                                     <label for="username" class="field-icon">
@@ -119,6 +123,8 @@ $(function() {
                                 <div class="clearfix"></div>
                              </ul>
                            </form>
+
+{{----------------------------END OF LOGIN FORM--------------------------------------------------------}}
                         </div>
                     </div>
                  </div>
@@ -134,18 +140,20 @@ $(function() {
                                     </div></h4>
                             </div>
 
-{{-- ------------------------------------------ REGISTRATION FORM------------------------------------------------ --}}
-                 <form name="row" method="post" class="register">
+{{-- --------------------------------- REGISTRATION FORM------------------------------------------------ --}}
+                 <form method="post" action="{{ url('/createlogin') }}" class="register" enctype="multipart/form-data">
+
+                    {{ csrf_field() }}
                       <div class="section">
                      <div class="radio radio_1"> {{--type of users who are allowed to register--}}
 
-                        <input id="volunteer" value="30" type="radio" >
+                        <input id="volunteer" value="30" type="radio" name="utype" checked>
                         <label for="volunteer">Volunteer</label>
-                        <input id="institution" type="radio" value="40">
+                        <input id="institution" type="radio" value="40" name="utype">
                         <label for="institution">Institution/Organaisation</label>     
                      </div>
                    </div>
-{{--------------------------------------REGISTRATION PART OF VOLUNTEER BEGNING--------------------------------------}}
+{{-------------------------------REGISTRATION PART OF VOLUNTEER BEGNING--------------------------------------}}
                                 <div class="section">
                                     <label for="name" class="field prepend-icon">
                                     <input type="text" name="name" id="name" placeholder="Your Name">
@@ -175,14 +183,12 @@ $(function() {
 
                                <div class="section">
                                   <label for="country" class="field prepend-icon">
-                                  <select path="country" id="country" class="form-control input-sm">
+                                  <select path="country" id="country" name="country" class="form-control input-sm">
                                         <option value="1">Select Country</option>
-                                        <option value="2">Japan</option>
-                                        <option value="3">Kenya</option>
-                                        <option value="4">Dubai</option>
-                                        <option value="5">Italy</option>
-                                        <option value="6">Greece</option> 
-                                        <option value="7">Iceland</option> 
+                                        <option value="2">INDIA</option>
+                                        <option value="3">SREELANKA</option>
+                                        <option value="4">COSTARICA</option>
+                                        
                                   </select>
                                   <label for="country" class="field-icon">
                                   <i class="fa fa-user"></i>
@@ -195,9 +201,9 @@ $(function() {
                                   <label for="unique identification" class="field prepend-icon">
                                      <select  id="uidtype" name="uidtype" class="form-control input-sm">
                                         <option value="0">UNIQUE IDENTIFICATION</option>
-                                        <option value="1">ADAR NUMBER</option>
-                                        <option value="2">VOTERS ID</option>
-                                        <option value="3">PASSPORT NUMBER</option>
+                                        <option value="ADARNUMBER">ADAR NUMBER</option>
+                                        <option value="VOTERSID">VOTERS ID</option>
+                                        <option value="PASSPORTNUMBER">PASSPORT NUMBER</option>
                                      </select>
                                      <label for="name" class="field-icon">
                                      <i class="fa fa-user"></i>
@@ -216,8 +222,8 @@ $(function() {
 
 
                                 <div class="section">
-                                    <label for="resume" class="field prepend-icon">
-                                    <input type="text" name="resume" id="resume" placeholder="upload resume">
+                                    <label for="resume" class="">
+                                    <input type="file" name="resume" id="resume" placeholder="upload resume">
                                     <label for="resume" class="field-icon">
                                     <i class="fa fa-lock"></i>
                                     </label>
@@ -226,7 +232,7 @@ $(function() {
 
 
                                <div class="checkbox check_1">
-                                    <input id="check1" type="checkbox" name="check" value="check1">
+                                    <input id="check1" type="checkbox" name="check" value="1">
                                     <label for="check1">I agree to the Terms of Service and Privacy Policy</label>
                                </div>
 
@@ -234,7 +240,7 @@ $(function() {
                                <div class="submit"><input type="submit" onclick="myFunction()" value="Register"></div>
                                </div>
         </form>
-{{-- ---------------------------- END OF VOLUNTERR REGISTRATION FORM-------------------------------------------------}}
+{{-- ---------------------------- END OF VOLUNTERR REGISTRATION FORM------------------------------------}}
                      </div>
                  </div>
              </div>
@@ -317,13 +323,14 @@ $(function() {
                 <li><a href="grids.html">Grids</a></li>-->
               </ul>
             </li>
-            <li><a href="{{url('article')}}">Articles</a></li>
+          <!--  <li><a href="{{url('article')}}">Articles</a></li>
             <li><a href="{{url('forum')}}">Forum</a></li>
             <li><a href="{{url('videos')}}">Video</a></li>
          <!--   <li><a href="{{url('advertise')}}">Advertising</a></li>-->
             <li><a href="{{url('contact')}}">Contacts</a></li>
-            <li><a href="{{url('admin_home')}}">ADMIN</a></li>
+         <!--    <li><a href="{{url('admin_home')}}">ADMIN</a></li> -->
             <li><a href="{{url('member_home')}}">member</a></li>
+            <li><a href="{{url('volunteer_home')}}">Volunteer</a></li>
         </ul>
         <div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p></div></div>
      </div><!-- /.navbar-collapse -->

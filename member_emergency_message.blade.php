@@ -71,11 +71,13 @@ $(function() {
                   <a href="" class="link google" target="_parent"><span class="fa fa-tumblr"></span></a>
                </div>-->
             <!-- script for menu -->
-            <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p></div></div></span>
+            <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
+
+            	@foreach($uname as $datas)
+{{ $datas->name }} @endforeach
+</div></div></span>
             <div class="top-menu">
-                <ul>
-                   welcome you
-                </ul>
+                
             </div>
            
                           
@@ -131,7 +133,9 @@ $(function() {
 
             
             <li class="current_page"><a href="{{url('member_home')}}">Home</a></li>
-            <li><a href="{{url('personal_member')}}">name of user</a></li>
+            <li><a href="{{url('personal_member')}}">	@foreach($uname as $datas)
+{{ $datas->name }} @endforeach
+'S HOME</a></li>
             <li><a href="{{url('notification_member')}}">NOTIFICATION</a></li>
           
             <li class="dropdown">
@@ -167,10 +171,134 @@ $(function() {
         });
         }
 </script>
-<!--<div class="demo">
-  <marquee behavior="scroll" style="background:#F3DB28; color:#000;" direction="left" onmouseover="this.stop();" onmouseout="this.start();">                
-    Its easier to lead men to combat, stirring up their passion, than to restrain them and direct them toward the patient labors of peace."
-
-- Andre Gide 
-  </marquee>     
+<!--<div class="about_banner">
+	<!--<div class="container">
+		<h2>Forum</h2>
+		<span class="breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Forum</span></span>
+	</div>
 </div>-->
+<div class="about_top">
+ <div class="container">
+	<div class="col-md-3 forum">
+
+		      <!--------------------------- viewving members-------------------->
+	        <div class="fb-like-button social-item">
+	  			<a href="{{url('member_view_members')}}"> <div class="social-item-inner"> 
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+	  				<span class="like-count">View</span> 
+	  				<span class="like-text"> Members </span> 
+	  			</div></a> 
+	  		</div>
+
+	  		<!--<div class="fb-like-button social-item">
+	  			<a href="#" title="" target="_blank"> <div class="social-item-inner"> 
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+	  				<span class="like-count">Upgrade to </span> 
+	  				<span class="like-text"> Members </span> 
+	  			</div></a> 
+	  		</div>-->
+
+	  	<!--------------------------- MEMBERS viewing LINK/upgrading link-------------------->
+	  	<!-------------------------------Volunteers approval and viewving--->
+
+	  		<div class="twitter-like-button  social-item ">
+	  			 <a href="member_view_volunteer" > <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">View</span> 
+	  				<span class="like-text">Volunteer </span> 
+	  			</div> </a> 
+	  	    </div>
+
+	  	 
+	  	    <!---------------- volunteers approving and viewwing--------------------------->
+
+
+	  	    <!-------- section of work----------------->
+	  	    <div class="youtube-subscribers-button  social-item ">
+				 <a href="view_view_work" ><div class="social-item-inner">
+					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">View</span> 
+					 <span class="like-text"> Work </span>
+			   </div> </a> 
+	  		</div>
+
+	  		<!--<div class="youtube-subscribers-button  social-item ">
+				 <a href="admin_add_work"><div class="social-item-inner">
+					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">Add New</span> 
+					 <span class="like-text"> Work</span>
+			   </div> </a> 
+	  		</div>-->
+
+	  		<!---------------------------- section works ends-------------------------------->
+
+	  <!-------- create group------------------->
+	  		<div class="linkedin-button social-item ">
+			 	 <a href="member_view_group"> <div class="social-item-inner">
+			 		<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+			 		<span class="like-count">Create Groups</span> <span class="like-text"> Follower </span>
+			 	</div> </a> 
+	  		</div>
+
+	  <!------------------ create group section ends--------------------->
+	  <!------------------EMERGENCY MESSAGE------------------------------->
+	  		<div class="dribble-button social-item ">
+	 			 <a href="member_emergency_message"> <div class="social-item-inner">
+	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
+	 				<span class="like-text">EMERGENCY MESSAGE </span>
+	 			</div> </a> 
+	  		</div>
+	  	<!------------------------- EMERGENCY MESSAGE---------------------->
+	  		<div class="gplus-like-button  social-item">
+	 			 <a href="member_dialogue_session"> <div class="social-item-inner">
+	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
+	 				<span class="like-text"> Session </span> 
+	 			</div> </a>
+	  	    </div>
+
+	  	       <div class="twitter-like-button  social-item ">
+	  			 <a href="member_video_conferencing"> <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">Video</span> 
+	  				<span class="like-text">Conferencing </span> 
+	  			</div> </a> 
+	  	    </div>
+	</div>
+	<div class="col-md-9 column-15">
+
+
+	<h6> SORRY!!!
+<br>NO EMERGENCY MESSAGES
+<br>
+<br>
+<br></h6>
+	   	 <div class="clearfix"> </div>
+	   </div>
+	</div>		
+    <div class="clearfix"> </div>
+ </div>
+</div>
+@include('footer')
+<!----language selector----->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<link href="css/jquery.uls.css" rel="stylesheet"/>
+<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+<script>
+	$( document ).ready( function() {
+		$( '.uls-trigger' ).uls( {
+			onSelect : function( language ) {
+				var languageName = $.uls.data.getAutonym( language );
+				$( '.uls-trigger' ).text( languageName );
+			},
+			quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+		} );
+	} );
+</script>	
+</body>
+</html>
