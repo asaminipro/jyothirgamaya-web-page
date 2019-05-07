@@ -609,7 +609,7 @@ $(function() {
 <div class="footer_bottom">
     <div class="container">
         <div class="copy">
-            <p>Copyright © 2016 Community. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+           <!-- <p>Copyright © 2016 Community. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>-->
         </div>
     </div>
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;">Top </span></a>
