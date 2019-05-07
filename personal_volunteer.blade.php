@@ -1,4 +1,3 @@
-
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -60,7 +59,7 @@ $(function() {
         <div class="container">
 
             <div class="col-sm-3 logo">
-              <h1><a href="{{url('admin_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
+              <h1><a href="{{url('volunteer_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
             </div>
             <div class="col-sm-9 logo_right">
                <div class="social">
@@ -73,9 +72,12 @@ $(function() {
             <!-- script for menu -->
             <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
 
-            	@foreach($uname as $datas)
+
+
+      @foreach($uname as $datas)
 {{ $datas->name }} @endforeach
-</div></div></span>
+
+            </div></div></span>
             <div class="top-menu">
                 
             </div>
@@ -132,16 +134,17 @@ $(function() {
            
 
             
-            <li class="current_page"><a href="{{url('member_home')}}">Home</a></li>
-            <li><a href="{{url('personal_member')}}">	@foreach($uname as $datas)
+            <li class="current_page"><a href="{{url('volunteer_home')}}">Home</a></li>
+            <li><a href="{{url('personal_volunteer')}}">
+      @foreach($uname as $datas)
 {{ $datas->name }} @endforeach
 'S HOME</a></li>
-            <li><a href="{{url('notification_member')}}">NOTIFICATION</a></li>
+            <li><a href="{{url('notification_volunteer')}}">NOTIFICATION</a></li>
           
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">MESSAGES<span class="caret"></span></a>
               <ul class="dropdown-menu drop_menu" role="menu">
-                <li><a href="{{url('inbox_member')}}">INBOX</a></li>
+                <li><a href="{{url('inbox_volunteer')}}">INBOX</a></li>
                 <li><a href="{{url('outbox_member')}}">OUTBOX</a></li>
               <!--  <li><a href="shortcodes.html">Shortcodes</a></li>
                 <li><a href="faq.html">Faq</a></li>
@@ -180,10 +183,9 @@ $(function() {
 <div class="about_top">
  <div class="container">
 	<div class="col-md-3 forum">
-
-		      <!--------------------------- viewving members-------------------->
+     <!--------------------------- viewving members-------------------->
 	        <div class="fb-like-button social-item">
-	  			<a href="{{url('member_view_members')}}"> <div class="social-item-inner"> 
+	  			<a href="{{url('volunteer_view_members')}}"> <div class="social-item-inner"> 
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
 	  				<span class="like-count">View</span> 
 	  				<span class="like-text"> Members </span> 
@@ -202,7 +204,7 @@ $(function() {
 	  	<!-------------------------------Volunteers approval and viewving--->
 
 	  		<div class="twitter-like-button  social-item ">
-	  			 <a href="member_view_volunteer" > <div class="social-item-inner">
+	  			 <a href="volunteer_view_volunteer" > <div class="social-item-inner">
 	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	  				 <span class="like-count">View</span> 
 	  				<span class="like-text">Volunteer </span> 
@@ -221,7 +223,7 @@ $(function() {
 
 	  	    <!-------- section of work----------------->
 	  	    <div class="youtube-subscribers-button  social-item ">
-				 <a href="member_view_work" ><div class="social-item-inner">
+				 <a href="volunteer_view_work" ><div class="social-item-inner">
 					 <span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="like-count">View</span> 
 					 <span class="like-text"> Work </span>
 			   </div> </a> 
@@ -238,79 +240,117 @@ $(function() {
 
 	  <!-------- create group------------------->
 	  		<div class="linkedin-button social-item ">
-			 	 <a href="member_view_group"> <div class="social-item-inner">
+			 	 <a href="volunteer_view_group"> <div class="social-item-inner">
 			 		<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-			 		<span class="like-count">Create Groups</span> <span class="like-text"> Follower </span>
+			 		<span class="like-count">View Groups</span> <span class="like-text"> Follower </span>
 			 	</div> </a> 
 	  		</div>
 
 	  <!------------------ create group section ends--------------------->
 	  <!------------------EMERGENCY MESSAGE------------------------------->
 	  		<div class="dribble-button social-item ">
-	 			 <a href="member_emergency_message"> <div class="social-item-inner">
+	 			 <a href="volunteer_emergency_message" title="" target="_blank"> <div class="social-item-inner">
 	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count"></span> 
 	 				<span class="like-text">EMERGENCY MESSAGE </span>
 	 			</div> </a> 
 	  		</div>
-	  	<div class="gplus-like-button  social-item">
-	 			 <a href="member_dialogue_session"> <div class="social-item-inner">
-	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
-	 				<span class="like-text"> Session </span> 
+	  	<!------------------------- EMERGENCY MESSAGE---------------------->
+	  		<!-------<div class="gplus-like-button  social-item">
+	 			 <a href="#" title="" target="_blank"> <div class="social-item-inner">
+	 				<span class="fa fa-google-plus sc-icon"></span> <span class="like-count">120</span> 
+	 				<span class="like-text"> Followers </span> 
 	 			</div> </a>
-	  	    </div>
-
-	  	       <div class="twitter-like-button  social-item ">
-	  			 <a href="member_video_conferencing"> <div class="social-item-inner">
-	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	  				 <span class="like-count">Video</span> 
-	  				<span class="like-text">Conferencing </span> 
-	  			</div> </a> 
-	  	    </div>
+	  	    </div>-------------->
 	</div>
 	<div class="col-md-9 column-15">
+			<a href="about_volunteer">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 
-
-		
-<br>
-<div class="table-users">
-   
-   
-   <table cellspacing="0" border="2">
-   	<tr><td colspan="4" height="50" width="1000" bgcolor="#20B2AA"><center><b>NOTIFICATIONS</b></center></td></tr>
-      <tr bgcolor="cyan">
-         <th width="20">ID</th>
-         <th width="230">TITLE</th>
-         <th>DESCRIPTION</th>
-         <th>DATE</th>
-        
-      </tr>
-
-      <tr>
-         <td>1</td>
-         <td><b>notification</b></td>
-         <td>“You've gotta dance like there's nobody watching,
-Love like you'll never be hurt,
-Sing like there's nobody listening,
-And live like it's heaven on earth.” </td>
-         <td>05/04/2019</td>
-         
-      </tr>
-
-     
-   </table>
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div>
-</div>
-
-
+			<form class="contact" action="{{ url('pvolnewsfeed') }}" method="POST">
+      {{ csrf_field() }}
+      <textarea  name="des" id="des"value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
+            <div class="submit-wrap">
+              <input type="submit" value="Send">
+              <input type="reset" value="Clear">
+            </div>
+       </form>
+<!----------------------------------news feed forum ends------------------------->
 
 	   
-	   	 <div class="clearfix"> </div>
-	   </div>
-	  
-	   	 <div class="clearfix"> </div>
-	   </div>
-	</div>		
+<!--------------------------CONTENT DISPLAYING AREA---------------------------------------------->
+<br><br><br>
+
+	     <h4>View the Posts here..</h4>
+
+   
+ 
+     <div class="forum_box1">
+       <span class="head_6">
+        @foreach($dialoguedata as $dialoguedata)
+        <table border="5">
+          <tr>
+            <td>
+              <br><br>
+        POSTED BY:
+
+         </span>
+         <span class="head_3">
+        
+
+ 
+            <a href="">{{ $dialoguedata->name }}</a>     <h3>{{ $dialoguedata->created_at }}</h3>
+         </span>
+
+       
+     </td>
+        </tr>
+        <tr>
+          <td>
+       <div class="col-sm-12 forum_box1-left">
+         <center>
+        <a href="classified_detail.html"><img src="images/c9.jpg" class="img-responsive" width="250" alt=""/></a></center></td>
+      </tr>
+      <tr>
+        <td>
+        <h4><a href="classified_detail.html"></a>{{ $dialoguedata->description }}</h4>
+       
+   <!--       <h5>80 Topics</h5>
+        <p>0 replies</p> -->
+       </div><br>
+</td>
+ 
+</tr>
+       <!-- <div class="col-sm-9 forum_box1-right">
+        <p> </p>
+            <div class="post-element clearfix">  <tr
+
+              <div class="post__1"> -->
+
+                <tr>
+                  <td>
+                <span class="post__1-item post__1-date"><a href="#">Add new Comment</a></span>
+                <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-heart-o"></i></a></span><span>1</span>
+              </span>
+               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-comment-o"></i></a></span><span>12</span>
+              </span>
+               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-eye"></i></a></span><span>10</span></tr>
+                </span></td></tr></table>
+                  <br><br>@endforeach
+              </span>
+                
+            </div>                     
+            </div>
+         
+       </div>
+       <div class="clearfix"> </div>
+     </div>
+    
+       <div class="clearfix"> </div>
+     </div>
+  </div>    
     <div class="clearfix"> </div>
  </div>
 </div>

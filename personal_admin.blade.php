@@ -1,3 +1,4 @@
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -6,14 +7,177 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
-
+<head>
+<title>yothirgamaya Peace Building Symposium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Community Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+<!-- Owl Stylesheets -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!----drop down----->
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+</script>
+<!----font-Awesome----->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!----font-Awesome----->
+<!--light-box-files -->
+<script src="js/jquery.chocolat.js"></script>
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8" />
+<!--light-box-files -->
+<script type="text/javascript" charset="utf-8">
+$(function() {
+    $('.gallery a').Chocolat();
+});
+</script>
+</head>
 <body>
-<!-- header-section-starts -->
 <div class="header">
-	  <header class="row">
-        @include('admin_header')
-    </header>
+        <div class="container">
+
+            <div class="col-sm-3 logo">
+              <h1><a href="{{url('admin_home')}}"><span class="highlight">JOTHIR<br>GAMAYA</span><sub>PBS</sub></a></h1>
+            </div>
+            <div class="col-sm-9 logo_right">
+               <div class="social">
+                <!--  <a href="" class="link facebook" target="_parent"><span class="fa fa-facebook"></span></a>
+                  <a href="" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a>
+                  <a href="" class="link google" target="_parent"><span class="fa fa-google-plus"></span></a>
+                  <a href="" class="link google" target="_parent"><span class="fa fa-linkedin"></span></a>
+                  <a href="" class="link google" target="_parent"><span class="fa fa-tumblr"></span></a>
+               </div>-->
+            <!-- script for menu -->
+            <span class="menu"><div class="help_line"><div id="txtblnk"><p>HELP LINE : (+91)-2548713984</p>
+
+            	<!-- @foreach($uname as $name){{ $name->name }} @endforeach -->
+            	</div></div></span>
+            <div class="top-menu">
+                <ul>
+                
+                </ul>
+            </div><br>
+    
+@foreach($uname as $datas)
+
+ {{ $datas->name }}
+ @endforeach
+     
+                    </div>
+                  </div>
+                </div>
+              <div class="clearfix"></div>
+         </div>
+       </div>
 </div>
+<nav class="navbar nav_bottom" role="navigation">
+ <div class="container">
+ <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="navbar-header nav_2">
+      <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">Menu
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+   </div> 
+   <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+        <ul class="nav navbar-nav nav_1">
+
+            <!---------------------space adjustment----------------->
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+           <li><a href=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </a></li>
+<!----space adjustment ends----------------->
+           
+
+            
+            <li class="current_page"><a href="{{url('/admin_home')}}">Home</a></li>
+            <li><a href="{{url('/personal_admin')}}">@foreach($uname as $datas)
+
+ {{ $datas->name }}
+ @endforeach 
+'S HOME</a></li>
+            <li><a href="{{url('notification')}}">NOTIFICATION</a></li>
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MESSAGES<span class="caret"></span></a>
+              <ul class="dropdown-menu drop_menu" role="menu">
+                <li><a href="{{url('inbox_admin')}}">INBOX</a></li>
+                <li><a href="{{url('outbox_admin')}}">OUTBOX</a></li>
+              <!--  <li><a href="shortcodes.html">Shortcodes</a></li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="terms.html">Terms of use</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="grids.html">Grids</a></li>-->
+              </ul>
+            </li>
+            
+            <li><a href="{{url('logout')}}">Logout</a></li>
+        </ul>
+        
+     </div><!-- /.navbar-collapse -->
+   </div>
+</nav>
+<script type="text/javascript">
+        $(function() {
+        blinkeffect('#txtblnk');
+        })
+        function blinkeffect(selector) {
+        $(selector).fadeOut('slow', function() {
+        $(this).fadeIn('slow', function() {
+        blinkeffect(this);
+        });
+        });
+        }
+</script>
 <!--<div class="about_banner">
 	<!--<div class="container">
 		<h2>Forum</h2>
@@ -95,22 +259,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	 				<span class="like-text">EMERGENCY MESSAGE </span>
 	 			</div> </a> 
 	  		</div>
-	  	<!------------------------- EMERGENCY MESSAGE---------------------->
-	  		<!-------<div class="gplus-like-button  social-item">
-	 			 <a href="#" title="" target="_blank"> <div class="social-item-inner">
-	 				<span class="fa fa-google-plus sc-icon"></span> <span class="like-count">120</span> 
-	 				<span class="like-text"> Followers </span> 
+	  		<div class="gplus-like-button  social-item">
+	 			 <a href="admin_dialogue_session"> <div class="social-item-inner">
+	 				<span class=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="like-count">Dialogue</span> 
+	 				<span class="like-text"> Session </span> 
 	 			</div> </a>
-	  	    </div>-------------->
+	  	    </div>
+
+	  	       <div class="twitter-like-button  social-item ">
+	  			 <a href="admin_video_conferencing"> <div class="social-item-inner">
+	  				<span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  				 <span class="like-count">Video</span> 
+	  				<span class="like-text">Conferencing </span> 
+	  			</div> </a> 
+	  	    </div>
 	</div>
 
 	<div class="col-md-9 column-15">
-			<a href="">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="">FRIENDS</a>
+			<a href="about_admin">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 
 		<!--------------news feed FORUM---------------------------------->
-		<form class="contact" action="/create" method="post">
-			<textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
+		<form class="contact" action="{{ url('padminnewsfeed') }}" method="POST">
+			{{ csrf_field() }}
+			<textarea  name="des" id="des"value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
 	          <div class="submit-wrap">
 	          	<input type="submit" value="Send">
 	          	<input type="reset" value="Clear">
@@ -122,41 +294,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--------------------------CONTENT DISPLAYING AREA---------------------------------------------->
 <br><br><br>
 
-	   <h4>View your Posts here..</h4>
-	   <div class="forum_box1">
-	   	 <span class="head_2">
-            <a href="">heading</a>
+	   
+	   <h4>View the Posts here..</h4>
+
+   
+ 
+     <div class="forum_box1">
+       <span class="head_6">
+        @foreach($dialoguedata as $dialoguedata)
+        <table border="5">
+          <tr>
+            <td>
+              <br><br>
+        POSTED BY:
+
          </span>
-	   	 <h3>Mon, 15/11/2015-12:24</h3>
-	   	 <div class="col-sm-3 forum_box1-left">
-	   	 	<h4><a href="classified_detail.html">name of user</a></h4>
-	   	 	<a href="classified_detail.html"><img src="images/c9.jpg" class="img-responsive" alt=""/></a>
-	   	 	<h5>80 Topics</h5>
-	   	 	<p>0 replies</p>
-	   	 </div>
-	   	 <div class="col-sm-9 forum_box1-right">
-	   	 	<p>"contents of the hghgd hgdfjh fjhfzf fdhghfkj ghfzjhfl vfjdvkhvl vdfvj hjjhfajv vfgvjvjfvv hvfvjv."</p>
-            <div class="post-element clearfix">                         
- 	  	        <div class="post__1">
-    	          <span class="post__1-item post__1-date"><a href="#">Add new Comment</a></span>
-    	          <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-    		          <i class="fa fa-heart-o"></i></a></span><span>1</span>
-    		      </span>
-    		       <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-    		          <i class="fa fa-comment-o"></i></a></span><span>12</span>
-    		      </span>
-    		       <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
-    		          <i class="fa fa-eye"></i></a></span><span>10</span>
-    		      </span>
-    		    </div>                     
+         <span class="head_3">
+        
+
+ 
+            <a href="">{{ $dialoguedata->name }}</a>     <h3>{{ $dialoguedata->created_at }}</h3>
+         </span>
+
+       
+     </td>
+        </tr>
+        <tr>
+          <td>
+       <div class="col-sm-12 forum_box1-left">
+         <center>
+        <a href="classified_detail.html"><img src="images/c9.jpg" class="img-responsive" width="250" alt=""/></a></center></td>
+      </tr>
+      <tr>
+        <td>
+        <h4><a href="classified_detail.html"></a>{{ $dialoguedata->description }}</h4>
+       
+   <!--       <h5>80 Topics</h5>
+        <p>0 replies</p> -->
+       </div><br>
+</td>
+ 
+</tr>
+       <!-- <div class="col-sm-9 forum_box1-right">
+        <p> </p>
+            <div class="post-element clearfix">  <tr
+
+              <div class="post__1"> -->
+
+                <tr>
+                  <td>
+                <span class="post__1-item post__1-date"><a href="#">Add new Comment</a></span>
+                <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-heart-o"></i></a></span><span>1</span>
+              </span>
+               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-comment-o"></i></a></span><span>12</span>
+              </span>
+               <span class="post__1-item"><span class="link_2"><a href="#" title="like me" class="like_button">
+                  <i class="fa fa-eye"></i></a></span><span>10</span></tr>
+                </span></td></tr></table>
+                  <br><br>@endforeach
+              </span>
+                
+            </div>                     
             </div>
-	   	 </div>
-	   	 <div class="clearfix"> </div>
-	   </div>
-	  
-	   	 <div class="clearfix"> </div>
-	   </div>
-	</div>		
+         
+       </div>
+       <div class="clearfix"> </div>
+     </div>
+    
+       <div class="clearfix"> </div>
+     </div>
+  </div>    
     <div class="clearfix"> </div>
  </div>
 </div>
