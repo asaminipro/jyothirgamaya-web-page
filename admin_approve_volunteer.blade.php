@@ -138,7 +138,7 @@ $(function() {
 
             
             <li class="current_page"><a href="{{url('/admin_home')}}">Home</a></li>
-            <li><a href="{{url('/personal_admin')}}">   @foreach($uname as $datas)
+            <li><a href="{{url('/personal_admin')}}"> @foreach($uname as $datas)
 {{ $datas->name }} @endforeach
 'S HOME</a></li>
             <li><a href="{{url('notification')}}">NOTIFICATION</a></li>
@@ -277,10 +277,112 @@ $(function() {
 	  	    </div>
 	</div>
 	<div class="col-md-9 column-15">
+		<div class="table-users">
+   
+   
+   <table cellspacing="0" border="2">
+   	<tr><td colspan="8" height="50" width="1000" bgcolor="#20B2AA"><center><b>APPLICANTS AS NEW VOLUNTEERS</b></center></td></tr>
+      <tr bgcolor="cyan">
+         <th >NAME</th>
+         <th >EMAIL</th>
+         <th>DATE OF BIRTH</th>
+                  <th>UNIQUE ID TYPE</th>
+         <th>UNIQUE IDENTIFICATION</th>
+          <th>VIEW RESUME</th>
+           <th>REVIEW(review after interview)</th>
+            <th>ACCEPT/REGECT</th>
+        
+      </tr>
+@foreach($newuser as $datas)
 
 
-	  <H6> GROUP CREATION FOR USERS AND WORKS</H6>
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <tr>
+         <td>{{ $datas->name }}</td>
+         <td><b>{{ $datas->email }}</b></td>
+         <td>{{ $datas->dob }} </td>
+         <th>{{ $datas->uid_type }}</th>
+         <td>{{ $datas->uid_no }}</td>
+         <th><a href="view_resume/{{ $datas->lid }}">view resume</a></th>
+
+         <th>
+
+<!-- Trigger/Open The Modal -->
+@if($datas->review=="")
+<button id="myBtn">Add Review</button>
+@else
+review aded
+@endif
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+     <form class="contact" action="{{ url('admin_user_review') }}" method="POST">
+      {{ csrf_field() }}
+      Write the volunteer Review after the FACE-TO-FACE interview
+      <textarea  name="des" id="des"value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Write somthing here....</textarea>
+            <div class="submit-wrap">
+             <center> <input type="submit" value="SUBMIT">
+              <input type="reset" value="Clear"></center>
+            </div>
+       </form>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+ </th>
+ @if( $datas->userstatus=='0' )
+ {
+         <th><a href="admin_user_approval/{{ $datas->lid }}">Accept</a>
+         	<br><a href="admin_user_reject/{{ $datas->lid }}">Reject</a></th>
+  }
+@elseif( $datas->userstatus=='1' )
+{
+  <th><a href="disable_volunteer/{{ $datas->lid }}">disable</a></th>
+
+}
+@else
+{
+  <th>REJECTED</th>
+}
+  @endif
+         
+      </tr>
+ @endforeach
+     
+   </table>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	   	 <div class="clearfix"> </div>
 	   </div>
 	</div>		
