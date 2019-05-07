@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <div class="about_banner">
 	<div class="container">
-		<h2>About Fullwidth</h2>
+		<h2>About us</h2>
 		<span class="breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>About</span></span>
 	</div>
 </div>
@@ -34,19 +34,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <a href="contact.html" class="list-group-item ">Contact Us</a>
        </div>
 	</div>
-	<div class="col-md-9 column-2">
-		<div id="column" class="sub_col" style="height: 65px;">
+	<div class="col-md-9 column-9">
+		<!--<div id="column" class="sub_col" style="height: 65px;">
 			<div class="text-inner"><p>&nbsp;&nbsp;&nbsp;&nbsp;01</p>
 			  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ABOUT US</p>
 			</div>
 	    </div>	
 	    <div id="sub_col2">
-			<h3>There are many variations</h3>
-			<h4>The standard chunk of Lorem Ipsum used since the 1500s</h4>
+			
 		 </div>	
 	     <div class="clearfix"> </div>
-	     <p class="m_1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-	     <p class="m_1 m_2">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+	     <h6> UNDER CONSTRU</h6></p>
 	</div>		
     <div class="clearfix"> </div>
  </div>
@@ -120,7 +118,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    </div>
 	    <div class="but_4">
 	      <a class="readmore" href="#" title="Read More">Read More</a>
-	    </div>
+	    </div>-->
+	    <h6> UNDER CONSTRUCTION</h6><br><br><br><br><br><br><br><br>
+	    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	</div>		
     <div class="clearfix"> </div>
  </div>
